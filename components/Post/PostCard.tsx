@@ -29,6 +29,7 @@ const PostCard = ({ imageClassName, post }: IProps) => {
 						src={takeOutPost.image.url}
 						alt={takeOutPost.title}
 						loading="eager"
+						priority={true}
 					/>
 				</div>
 				{/* title */}
