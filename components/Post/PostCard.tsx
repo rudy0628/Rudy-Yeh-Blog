@@ -28,9 +28,7 @@ const PostCard = ({ imageClassName, post }: IProps) => {
 						objectFit="cover"
 						src={takeOutPost.image.url}
 						alt={takeOutPost.title}
-						loading="lazy"
-						placeholder="blur"
-						blurDataURL={takeOutPost.image.url}
+						loading="eager"
 					/>
 				</div>
 				{/* title */}
