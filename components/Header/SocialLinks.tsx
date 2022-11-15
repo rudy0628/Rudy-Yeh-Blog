@@ -18,6 +18,7 @@ const SocialLinks = ({ color }: IProps) => {
 				href="https://rudyyeh.dev/"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="RudyYeh Portfolio"
 			>
 				<Globe size={18} color={color} />
 			</a>
@@ -26,6 +27,7 @@ const SocialLinks = ({ color }: IProps) => {
 				href="https://www.facebook.com/s3352250"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="Facebook"
 			>
 				<Facebook size={18} color={color} />
 			</a>
@@ -34,6 +36,7 @@ const SocialLinks = ({ color }: IProps) => {
 				href="https://github.com/rudy0628"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="GitHub"
 			>
 				<GitHub size={18} color={color} />
 			</a>
@@ -42,6 +45,7 @@ const SocialLinks = ({ color }: IProps) => {
 				href="https://www.instagram.com/ya.0628/"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="Instagram"
 			>
 				<Instagram size={18} color={color} />
 			</a>
@@ -50,6 +54,7 @@ const SocialLinks = ({ color }: IProps) => {
 				href="https://line.me/ti/p/ZO_picyri2"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="Line"
 			>
 				<LineIcon
 					size={20}
