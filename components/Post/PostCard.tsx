@@ -23,11 +23,10 @@ const PostCard = ({ imageClassName, post }: IProps) => {
 						'w-full object-cover overflow-hidden lg:group-hover:scale-105 duration-500 rounded-lg cursor-pointer shadow-lg relative'
 					)}
 				>
-					<Image
-						layout="fill"
-						objectFit="cover"
+					<img
 						src={takeOutPost.image.url}
 						alt={takeOutPost.title}
+						className="object-cover h-full w-full"
 					/>
 				</div>
 				{/* title */}
