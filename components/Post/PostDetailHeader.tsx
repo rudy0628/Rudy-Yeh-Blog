@@ -17,6 +17,8 @@ const PostDetailHeader = ({ post }: IProps) => {
 				src={post.image.url}
 				className="absolute top-0 w-full h-full object-cover bg-zinc-500"
 				alt={post.slug}
+				loading="eager"
+				priority={true}
 			/>
 			{/* background filter */}
 			<div className="w-full h-full absolute top-0 right-0 bg-black bg-opacity-60" />
