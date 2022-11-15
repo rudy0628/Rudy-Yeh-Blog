@@ -117,6 +117,12 @@
 	}
 }
 
+#noteBlock {
+	p {
+		@apply my-0 inline text-inherit dark:text-inherit;
+	}
+}
+
 /* Basic editor styles */
 .ProseMirror {
 	padding: 1rem;
