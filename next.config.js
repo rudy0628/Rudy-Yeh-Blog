@@ -1,8 +1,14 @@
 /** @type {import('next').NextConfig} */
 const withTM = require('next-transpile-modules')(['react-syntax-highlighter']);
-module.exports = withTM({
-	reactStrictMode: true,
-	images: {
-		domains: ['media.graphassets.com'],
-	},
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+	enabled: process.env.ANALYZE === 'true',
 });
+
+module.exports = withBundleAnalyzer(
+	withTM({
+		reactStrictMode: true,
+		images: {
+			domains: ['media.graphassets.com'],
+		},
+	})
+);
