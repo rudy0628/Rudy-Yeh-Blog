@@ -26,7 +26,7 @@ const PostCard = ({ imageClassName, post }: IProps) => {
 					<img
 						src={takeOutPost.image.url}
 						alt={takeOutPost.title}
-						className="object-cover"
+						className="object-cover h-full w-full"
 					/>
 				</div>
 				{/* title */}
