@@ -88,6 +88,8 @@ const PostDetailContent = ({ source, slug }: IProps) => {
 				<button
 					className="text-[#90caf9] transition duration-500"
 					onClick={likeBtnHandler}
+					type="button"
+					aria-label="like"
 				>
 					<Heart
 						className={cx(
