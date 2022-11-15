@@ -1,7 +1,6 @@
 import React from 'react';
 import { IPost } from '../../type';
 import Link from 'next/link';
-import Image from 'next/image';
 import cx from 'classnames';
 import moment from 'moment';
 
