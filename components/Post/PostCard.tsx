@@ -1,6 +1,7 @@
 import React from 'react';
 import { IPost } from '../../type';
 import Link from 'next/link';
+import Image from 'next/image';
 import cx from 'classnames';
 import moment from 'moment';
 
@@ -22,10 +23,14 @@ const PostCard = ({ imageClassName, post }: IProps) => {
 						'w-full object-cover overflow-hidden lg:group-hover:scale-105 duration-500 rounded-lg cursor-pointer shadow-lg relative'
 					)}
 				>
-					<img
+					<Image
+						layout="fill"
+						objectFit="cover"
 						src={takeOutPost.image.url}
 						alt={takeOutPost.title}
-						className="object-cover h-full w-full"
+						loading="lazy"
+						placeholder="blur"
+						blurDataURL={takeOutPost.image.url}
 					/>
 				</div>
 				{/* title */}
