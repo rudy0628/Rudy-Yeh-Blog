@@ -1,0 +1,9 @@
+export { default as PostCard } from './PostCard';
+export { default as PostDetailNav } from './PostDetailNav';
+export { default as PostDetailHeader } from './PostDetailHeader';
+export { default as PostDetailContent } from './PostDetailContent';
+export { default as PostComments } from './PostComments';
+export { default as PostComment } from './PostComment';
+export { default as PostCommentForm } from './PostCommentForm';
+export { default as PostAboutUser } from './PostAboutUser';
+export { default as PostRelatedPosts } from './PostRelatedPosts';
