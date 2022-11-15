@@ -23,7 +23,7 @@
 		@apply mx-1 text-[#90caf9] hover:text-[#73a2c7] transition break-all;
 	}
 	& img {
-		@apply shadow-lg rounded-xl lg:hover:scale-105 transition-all duration-200 hover:shadow-2xl mt-16;
+		@apply shadow-lg rounded-xl lg:hover:scale-105 transition-all duration-200 hover:shadow-2xl mt-16 dark:bg-white;
 	}
 
 	ol {
@@ -39,7 +39,7 @@
 	}
 
 	li {
-		@apply ml-[3%] mb-2;
+		@apply ml-[3.5%] mb-2;
 	}
 
 	// the code block inside article but not inside the pre tag
@@ -73,7 +73,7 @@
 		@apply mx-1 text-[#90caf9] hover:text-[#73a2c7] transition break-all;
 	}
 	& img {
-		@apply shadow-lg rounded-xl lg:hover:scale-105 transition-all duration-200 hover:shadow-2xl my-8;
+		@apply shadow-lg rounded-xl lg:hover:scale-105 transition-all duration-200 hover:shadow-2xl my-8 dark:bg-white;
 	}
 	& blockquote {
 		@apply border-l-4 border-gray-400 pl-2;
@@ -114,6 +114,12 @@
 #image {
 	& p {
 		@apply text-center text-sm text-gray-400;
+	}
+}
+
+#noteBlock {
+	p {
+		@apply my-0 inline text-inherit dark:text-inherit;
 	}
 }
 
