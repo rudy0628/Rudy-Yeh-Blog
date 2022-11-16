@@ -1,18 +1,12 @@
 import React from 'react';
 
-interface IProps {
-	noteTitle: string;
-	children: React.ReactNode;
-	color: string;
-}
-
-const NoteBlock = ({ noteTitle, children, color }: IProps) => {
+const NoteBlock = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<div
-			className={`rounded-lg border-[1px] border-${color}-600 p-3 text-${color}-600`}
+			className={`rounded-lg border-[1px] !border-yellow-600 p-3 !text-yellow-600`}
 			id="noteBlock"
 		>
-			<span className="font-extrabold">{noteTitle}</span>：{children}
+			<span className="font-extrabold">注意</span>：{children}
 		</div>
 	);
 };
