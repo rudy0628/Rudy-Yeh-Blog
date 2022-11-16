@@ -127,40 +127,42 @@ const PostDetailContent = ({ source, slug, prevPost, nextPost }: IProps) => {
 				</div>
 			</div>
 			{/* prev and next post */}
-			<div className="flex gap-4 mt-16 md:flex-row flex-col">
-				{/* prev post */}
-				{prevPost && (
-					<Link href={`/posts/${prevPost.slug}`} className="flex-1">
-						<div className="border-[1px] rounded-lg p-3 flex gap-2 justify-start items-center group hover:border-[#90caf9] transition duration-300">
-							<p>
-								<ChevronLeft />
-							</p>
-							<div className="flex flex-col gap-2">
-								<p className="font-extrabold text-sm text-left">上一篇</p>
-								<p className="group-hover:text-[#90caf9] transition duration-300">
-									{prevPost.title}
+			{(prevPost || nextPost) && (
+				<div className="flex gap-4 mt-16 md:flex-row flex-col">
+					{/* prev post */}
+					{prevPost && (
+						<Link href={`/posts/${prevPost.slug}`} className="flex-1">
+							<div className="border-[1px] rounded-lg p-3 flex gap-2 justify-start items-center group hover:border-[#90caf9] transition duration-300">
+								<p>
+									<ChevronLeft />
+								</p>
+								<div className="flex flex-col gap-2">
+									<p className="font-extrabold text-sm text-left">上一篇</p>
+									<p className="group-hover:text-[#90caf9] transition duration-300">
+										{prevPost.title}
+									</p>
+								</div>
+							</div>
+						</Link>
+					)}
+					{/* nextPost */}
+					{nextPost && (
+						<Link href={`/posts/${nextPost.slug}`} className="flex-1">
+							<div className="border-[1px] rounded-lg p-3 flex gap-2 justify-end items-center group hover:border-[#90caf9] transition duration-300">
+								<div className="flex flex-col gap-2">
+									<p className="font-extrabold text-sm text-right">下一篇</p>
+									<p className="group-hover:text-[#90caf9] transition duration-300">
+										{nextPost.title}
+									</p>
+								</div>
+								<p>
+									<ChevronRight />
 								</p>
 							</div>
-						</div>
-					</Link>
-				)}
-				{/* nextPost */}
-				{nextPost && (
-					<Link href={`/posts/${nextPost.slug}`} className="flex-1">
-						<div className="border-[1px] rounded-lg p-3 flex gap-2 justify-end items-center group hover:border-[#90caf9] transition duration-300">
-							<div className="flex flex-col gap-2">
-								<p className="font-extrabold text-sm text-right">下一篇</p>
-								<p className="group-hover:text-[#90caf9] transition duration-300">
-									{nextPost.title}
-								</p>
-							</div>
-							<p>
-								<ChevronRight />
-							</p>
-						</div>
-					</Link>
-				)}
-			</div>
+						</Link>
+					)}
+				</div>
+			)}
 		</div>
 	);
 };
