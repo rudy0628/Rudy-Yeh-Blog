@@ -43,8 +43,6 @@ const PostComment = ({ comment, floor, slug, setComments }: IProps) => {
 
 		const data = await response.json();
 
-		console.log(data);
-
 		// update new comment
 		setComments(data);
 
