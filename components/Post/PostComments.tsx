@@ -29,6 +29,7 @@ const PostComments = ({ slug }: IProps) => {
 
 	useEffect(() => {
 		getPostComments(slug).then(comments => {
+			console.log(comments);
 			setComments(comments);
 			setFloor(comments.length + 1);
 		});
