@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import favicon from '../../assets/image/favicon.ico';
 
 interface IProps {
 	title?: string;
@@ -49,7 +50,7 @@ const PageHead = ({
 				}
 			/>
 			<meta name="twitter:card" content="summary_large_image" />
-			<link rel="icon" href="/favicon.png" />
+			<link rel="icon" href={favicon.src} />
 			<meta name="theme-color" content="#90caf9" />
 		</Head>
 	);
