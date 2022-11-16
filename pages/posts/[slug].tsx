@@ -59,7 +59,12 @@ const PostDetail = ({ post, source }: IProps) => {
 			{/* Post Header */}
 			<PostDetailHeader post={post} />
 			{/* Post Content */}
-			<PostDetailContent source={source} slug={post.slug} />
+			<PostDetailContent
+				source={source}
+				slug={post.slug}
+				prevPost={post.prevPost?.post || null}
+				nextPost={post.nextPost?.post || null}
+			/>
 			{/* Post Comments */}
 			<PostComments slug={post.slug} />
 			{/* About Post Author */}

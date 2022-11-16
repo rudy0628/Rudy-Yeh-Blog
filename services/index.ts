@@ -80,6 +80,18 @@ export const getPostDetails = async (slug: string) => {
 					slug
 				}
 				content
+				prevPost {
+					post {
+						slug
+						title
+					}
+				}
+				nextPost {
+					post {
+						slug
+						title
+					}
+				}
 			}
 		}
 	`;
