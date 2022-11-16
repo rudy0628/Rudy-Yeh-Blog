@@ -35,6 +35,18 @@ export interface IPostDetail {
 	};
 	slug: string;
 	title: string;
+	prevPost: {
+		post: {
+			slug: string;
+			title: string;
+		};
+	};
+	nextPost: {
+		post: {
+			slug: string;
+			title: string;
+		};
+	};
 }
 
 interface IComment {
