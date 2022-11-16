@@ -23,7 +23,7 @@ This is my blog (https://blog.rudyyeh.dev/). Built with a bunch of cool technolo
 - [x] Social media links
 - [x] About author
 - [ ] Query posts API paging and optimization
-- [ ] MDX components: Note
+- [x] MDX components: Note
 - [ ] MDX components: Select Question
 - [x] Visitor Google Login
 - [x] Give ❤️ Like to post
@@ -31,4 +31,5 @@ This is my blog (https://blog.rudyyeh.dev/). Built with a bunch of cool technolo
 - [x] Reply comment
 - [x] Recommend posts at the end of post page
 - [x] Google Analytics
-- [ ] Add Categories select
+- [x] Add Categories select
+- [ ] Add prev and next post
