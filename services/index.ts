@@ -156,5 +156,7 @@ export const getPostComments = async (slug: string | string[] | undefined) => {
 
 	const result = await request(graphqlAPI, query, { slug });
 
+	console.log(result.comments);
+
 	return result.comments;
 };
