@@ -85,6 +85,8 @@ const PostCommentForm = ({
 
 		const data = await response.json();
 
+		console.log(data);
+
 		setComments(data);
 		setFloor(data.length + 1);
 		setIsLoading(false);
