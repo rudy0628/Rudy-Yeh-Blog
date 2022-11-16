@@ -32,4 +32,4 @@ This is my blog (https://blog.rudyyeh.dev/). Built with a bunch of cool technolo
 - [x] Recommend posts at the end of post page
 - [x] Google Analytics
 - [x] Add Categories select
-- [ ] Add prev and next post
+- [x] Add prev and next post
