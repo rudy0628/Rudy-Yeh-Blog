@@ -31,6 +31,17 @@ const PostDetailHeader = ({ post }: IProps) => {
 				>
 					{post.title}
 				</p>
+				{/* categories */}
+				<div className="flex gap-2 mt-4">
+					{post.categories.map(category => (
+						<span
+							key={category.slug}
+							className="rounded-full py-1 px-2 border-2 text-xs tracking-wide font-extrabold text-white opacity-80"
+						>
+							{category.name}
+						</span>
+					))}
+				</div>
 				{/* author and created date */}
 				<div className="flex flex-row align-bottom mt-4">
 					<img

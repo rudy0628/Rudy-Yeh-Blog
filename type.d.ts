@@ -59,3 +59,9 @@ interface IRelatedPost {
 	createdAt: string;
 	slug: string;
 }
+
+interface ICategory {
+	id: string;
+	name: string;
+	slug: string;
+}
