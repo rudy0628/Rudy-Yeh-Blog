@@ -4,7 +4,7 @@ import { SocialLinks } from './';
 
 const Header = () => {
 	return (
-		<div className="mt-4 lg:mt-12">
+		<div className="my-4 lg:mt-12">
 			{/* Banner */}
 			<Link href="/" scroll>
 				<div className="font-extrabold text-xl lg:text-3xl mb-4 lg:mb-0 cursor-pointer flex flex-row lg:flex-col items-baseline">
