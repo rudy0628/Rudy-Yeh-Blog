@@ -27,6 +27,8 @@ const PostComments = ({ slug }: IProps) => {
 		});
 	}, []);
 
+	console.log(comments);
+
 	useEffect(() => {
 		getPostComments(slug).then(comments => {
 			setComments(comments);
