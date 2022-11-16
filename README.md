@@ -31,3 +31,4 @@ This is my blog (https://blog.rudyyeh.dev/). Built with a bunch of cool technolo
 - [x] Reply comment
 - [x] Recommend posts at the end of post page
 - [x] Google Analytics
+- [ ] Add Categories select
