@@ -6,7 +6,7 @@ This is my blog (https://blog.rudyyeh.dev/). Built with a bunch of cool technolo
 
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [GraphQL]([https://www.mongodb.com/](https://graphql.org/))
+- [GraphQL](https://graphql.org/)
 - [TailwindCSS](https://tailwindcss.com/) for styling
 - Post content created by [Next MDX Remote](https://github.com/hashicorp/next-mdx-remote)
 - Post store in [Hygraph](https://hygraph.com/)
