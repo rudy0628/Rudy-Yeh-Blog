@@ -7,8 +7,10 @@ import {
 	PostDetailNav,
 	PostDetailHeader,
 	PostAboutUser,
-	PostComments,
 } from '../../components/Post';
+const PostComments = dynamic(
+	() => import('../../components/Post/PostComments')
+);
 const PostDetailContent = dynamic(
 	() => import('../../components/Post/PostDetailContent')
 );

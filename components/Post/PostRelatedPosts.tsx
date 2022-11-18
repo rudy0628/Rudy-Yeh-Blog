@@ -17,11 +17,11 @@ const PostRelatedPosts = ({ categories, slug }: IProps) => {
 	const [relatedPosts, setRelatedPosts] = useState([]);
 
 	useEffect(() => {
-		const categoriesSlug = categories.map(category => category.slug);
-		getRelatedPosts(categoriesSlug, slug).then(posts => {
+		const formatCategories = categories.map(category => category.slug);
+		getRelatedPosts(formatCategories, slug).then(posts => {
 			setRelatedPosts(posts);
 		});
-	}, []);
+	}, [categories, slug]);
 
 	return (
 		<div className="w-full pb-32 pt-16 bg-zinc-200 dark:bg-zinc-700">
