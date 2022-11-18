@@ -50,18 +50,16 @@ export interface IPostDetail {
 }
 
 interface IComment {
-	node: {
-		author: {
-			id: string;
-			name: string;
-			photo: {
-				url: string;
-			};
-		};
+	author: {
 		id: string;
-		comment: string;
-		createdAt: string;
+		name: string;
+		photo: {
+			url: string;
+		};
 	};
+	id: string;
+	comment: string;
+	createdAt: string;
 }
 
 interface IRelatedPost {

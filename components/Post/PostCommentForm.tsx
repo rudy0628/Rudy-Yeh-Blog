@@ -21,11 +21,13 @@ import { EditorMenuBar } from '../utils';
 // react feather
 import { AlertCircle, Send, Loader } from 'react-feather';
 
+// type
+import { IComment } from '../../type';
+
 interface IProps {
 	slug: string;
-	setComments: React.Dispatch<React.SetStateAction<never[]>>;
+	setComments: React.Dispatch<React.SetStateAction<IComment[]>>;
 	floor: number;
-	setFloor: React.Dispatch<React.SetStateAction<number>>;
 	scrollToNewComment: () => void;
 	setDisplayAllComments: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -37,7 +39,6 @@ const PostCommentForm = ({
 	slug,
 	setComments,
 	floor,
-	setFloor,
 	scrollToNewComment,
 	setDisplayAllComments,
 }: IProps) => {
@@ -85,8 +86,7 @@ const PostCommentForm = ({
 
 		const data = await response.json();
 
-		setComments(data);
-		setFloor(data.length + 1);
+		setComments((prevComments: IComment[]) => [...prevComments, data]);
 		setIsLoading(false);
 
 		// clear

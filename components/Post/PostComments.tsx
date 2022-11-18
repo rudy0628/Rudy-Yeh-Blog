@@ -11,7 +11,7 @@ interface IProps {
 }
 
 const PostComments = ({ slug }: IProps) => {
-	const [comments, setComments] = useState([]);
+	const [comments, setComments] = useState<IComment[]>([]);
 	const [floor, setFloor] = useState(0);
 	const [displayAllComments, setDisplayAllComments] = useState(false);
 	const commentsRef = useRef<HTMLInputElement>(null);
@@ -35,6 +35,10 @@ const PostComments = ({ slug }: IProps) => {
 		});
 	}, []);
 
+	useEffect(() => {
+		setFloor(comments.length + 1);
+	}, [comments]);
+
 	return (
 		<div
 			ref={commentsRef}
@@ -45,7 +49,6 @@ const PostComments = ({ slug }: IProps) => {
 				slug={slug}
 				setComments={setComments}
 				floor={floor}
-				setFloor={setFloor}
 				scrollToNewComment={scrollToNewComment}
 				setDisplayAllComments={setDisplayAllComments}
 			/>
@@ -67,7 +70,7 @@ const PostComments = ({ slug }: IProps) => {
 							{/* comments */}
 							{comments.map((comment: IComment, index: number) => (
 								<PostComment
-									key={comment.node.id}
+									key={comment.id}
 									comment={comment}
 									floor={index + 1}
 									slug={slug}
