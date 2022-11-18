@@ -33,7 +33,7 @@ const PostComments = ({ slug }: IProps) => {
 			setComments(comments);
 			setFloor(comments.length + 1);
 		});
-	}, []);
+	}, [slug]);
 
 	useEffect(() => {
 		setFloor(comments.length + 1);
