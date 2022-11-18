@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useRef, useCallback, memo } from 'react';
 
 import { getPostComments } from '../../services';
 import { PostCommentForm, PostComment } from './';
@@ -102,4 +102,4 @@ const PostComments = ({ slug }: IProps) => {
 	);
 };
 
-export default PostComments;
+export default memo(PostComments);

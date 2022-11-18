@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import Link from 'next/link';
 import { getRelatedPosts } from '../../services';
 import { IRelatedPost } from '../../type';
@@ -60,4 +60,4 @@ const PostRelatedPosts = ({ categories, slug }: IProps) => {
 	);
 };
 
-export default PostRelatedPosts;
+export default memo(PostRelatedPosts);
