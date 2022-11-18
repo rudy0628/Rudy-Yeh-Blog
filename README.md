@@ -24,7 +24,7 @@ This is my blog (https://blog.rudyyeh.dev/). Built with a bunch of cool technolo
 - [x] About author
 - [ ] Query posts API paging and optimization
 - [x] MDX components: Note
-- [ ] MDX components: Select Question
+- [x] MDX components: Select Question
 - [x] Visitor Google Login
 - [x] Give ❤️ Like to post
 - [x] Comment on post
@@ -33,4 +33,4 @@ This is my blog (https://blog.rudyyeh.dev/). Built with a bunch of cool technolo
 - [x] Google Analytics
 - [x] Add Categories select
 - [x] Add prev and next post
-- [ ] AD
+- [x] AD
