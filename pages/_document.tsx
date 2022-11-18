@@ -7,6 +7,11 @@ export default class MyDocument extends Document {
 				<Head>
 					<script
 						async
+						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8154597503662072"
+						crossOrigin="anonymous"
+					/>
+					<script
+						async
 						src="https://www.googletagmanager.com/gtag/js?id=G-0WBD32QJ5Y"
 					/>
 					<script
