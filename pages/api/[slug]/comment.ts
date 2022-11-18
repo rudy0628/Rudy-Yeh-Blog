@@ -28,21 +28,28 @@ export default async function handler(
 						post: { connect: { slug: $slug } }
 					}
 				) {
+					author {
+						id
+						name
+						photo {
+							url
+						}
+					}
+					createdAt
 					id
+					comment
 				}
 			}
 		`;
 
 		try {
-			await graphqlClient.request(mutation, {
+			const result = await graphqlClient.request(mutation, {
 				id,
 				slug,
 				comment,
 			});
 
-			const comments = await getPostComments(slug);
-
-			return res.status(201).send(comments);
+			return res.status(201).send(result.createComment);
 		} catch (e: any) {
 			console.log(e);
 		}
@@ -61,19 +68,26 @@ export default async function handler(
 						comment: "這則留言就像變了心的女朋友，回不來了！"
 					}
 				) {
+					author {
+						id
+						name
+						photo {
+							url
+						}
+					}
+					createdAt
 					id
+					comment
 				}
 			}
 		`;
 
 		try {
-			await graphqlClient.request(mutation, {
+			const result = await graphqlClient.request(mutation, {
 				id,
 			});
 
-			const comments = await getPostComments(slug);
-
-			return res.status(201).send(comments);
+			return res.status(201).send(result.updateComment);
 		} catch (e: any) {
 			console.log(e);
 		}
