@@ -12,7 +12,7 @@ This is my blog (https://blog.rudyyeh.dev/). Built with a bunch of cool technolo
 - Post store in [Hygraph](https://hygraph.com/)
 - Serving the website through [Vercel](https://vercel.com/).
 
-## T
+## Todo List
 
 - [x] Basic Home Page
 - [x] Basic Post Page
