@@ -57,7 +57,7 @@ const PostComments = ({ slug }: IProps) => {
 					<h1 className="font-semibold text-2xl">
 						留言區（{comments.length}）
 					</h1>
-					<hr className="my-4" />
+					<hr className="my-6" />
 					{comments && comments.length > 0 && (
 						<div
 							className={cx(
