@@ -30,6 +30,7 @@ const PostComments = ({ slug }: IProps) => {
 
 	useEffect(() => {
 		getPostComments(slug).then(comments => {
+			console.log(comments);
 			setComments(comments);
 			setFloor(comments.length + 1);
 		});
@@ -67,7 +68,7 @@ const PostComments = ({ slug }: IProps) => {
 							{/* comments */}
 							{comments.map((comment: IComment, index: number) => (
 								<PostComment
-									key={comment.id}
+									key={comment.node.id}
 									comment={comment}
 									floor={index + 1}
 									slug={slug}

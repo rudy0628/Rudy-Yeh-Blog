@@ -24,7 +24,7 @@ const PostComment = ({ comment, floor, slug, setComments }: IProps) => {
 	const { userProfile }: any = useAuthStore();
 
 	useEffect(() => {
-		serialize(comment.comment).then(mdxSource => {
+		serialize(comment.node.comment).then(mdxSource => {
 			setSource(mdxSource);
 		});
 	}, []);
@@ -37,7 +37,7 @@ const PostComment = ({ comment, floor, slug, setComments }: IProps) => {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				id: comment.id,
+				id: comment.node.id,
 			}),
 		});
 
@@ -56,38 +56,38 @@ const PostComment = ({ comment, floor, slug, setComments }: IProps) => {
 	return (
 		<>
 			{/* comment */}
-			<div key={comment.id} className="my-4 flex items-start gap-2">
+			<div key={comment.node.id} className="my-4 flex items-start gap-2">
 				{/* image */}
 				<img
-					src={comment.author?.photo.url || defaultAvatar.src}
-					alt={comment.author?.name || 'default avatar'}
+					src={comment.node.author?.photo.url || defaultAvatar.src}
+					alt={comment.node.author?.name || 'default avatar'}
 					className="h-8 w-8 rounded-full bg-white"
 				/>
 				{/* comment */}
 				<div className="flex-1">
 					<p className="text-sm mb-3 font-semibold">
-						{comment.author?.name || '消失的帳號'}
+						{comment.node.author?.name || '消失的帳號'}
 					</p>
 					{/* if comment is not delete */}
-					{source && comment.author && (
+					{source && comment.node.author && (
 						<div id="comment">
 							<MDXRemote {...source} />
 						</div>
 					)}
 					{/* if comment is delete */}
-					{!comment.author && (
-						<p className="text-sm text-zinc-400">{comment.comment}</p>
+					{!comment.node.author && (
+						<p className="text-sm text-zinc-400">{comment.node.comment}</p>
 					)}
 					{
 						<p className="flex gap-2 text-xs text-zinc-400 mt-3">
-							B{floor}・{moment(comment.createdAt).format('YYYY-MM-DD')}
+							B{floor}・{moment(comment.node.createdAt).format('YYYY-MM-DD')}
 						</p>
 					}
 				</div>
 				{/* delete button if comment is existed and user is comment author */}
 				{userProfile &&
-					comment.author &&
-					comment.author.id === userProfile?.id && (
+					comment.node.author &&
+					comment.node.author.id === userProfile?.id && (
 						<button
 							className="p-2 rounded-lg text-red-500 hover:bg-red-500 transition duration-500 hover:text-white"
 							onClick={() => setDialogIsOpen(true)}
