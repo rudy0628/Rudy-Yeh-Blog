@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, memo } from 'react';
 import { Heart } from 'react-feather';
-import { CodeBlock, NoteBlock } from '../utils';
+import { CodeBlock, NoteBlock, Question } from '../utils';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { getPostLikes } from '../../services';
 import cx from 'classnames';
@@ -25,7 +25,7 @@ interface IProps {
 	};
 }
 
-const components = { CodeBlock, NoteBlock };
+const components = { CodeBlock, NoteBlock, Question };
 
 const PostDetailContent = ({ source, slug, prevPost, nextPost }: IProps) => {
 	const [likes, setLikes] = useState([]);
