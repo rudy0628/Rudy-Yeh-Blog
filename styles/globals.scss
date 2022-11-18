@@ -123,6 +123,12 @@
 	}
 }
 
+#question {
+	p {
+		@apply mt-0 mb-2;
+	}
+}
+
 /* Basic editor styles */
 .ProseMirror {
 	padding: 1rem;
