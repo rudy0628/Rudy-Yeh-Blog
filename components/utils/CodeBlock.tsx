@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Clipboard, Check } from 'react-feather';
 import cx from 'classnames';
+import { useTheme } from 'next-themes';
 
 // syntax highlighter
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -14,11 +15,11 @@ import 'react-toastify/dist/ReactToastify.css';
 interface IProps {
 	children: string;
 	language: string;
-	isDarkMode: boolean;
 }
 
-const CodeBlock = ({ children, language, isDarkMode }: IProps) => {
+const CodeBlock = ({ children, language }: IProps) => {
 	const [isCopy, setIsCopy] = useState<boolean>(false);
+	const { theme } = useTheme();
 
 	const copyToClipboard = () => {
 		window.navigator.clipboard.writeText(children);
@@ -34,7 +35,7 @@ const CodeBlock = ({ children, language, isDarkMode }: IProps) => {
 		<div className="relative border-gray-500">
 			<SyntaxHighlighter
 				showLineNumbers
-				style={isDarkMode ? oneDark : coy}
+				style={theme === 'dark' ? oneDark : coy}
 				language={language}
 			>
 				{children}
@@ -45,7 +46,7 @@ const CodeBlock = ({ children, language, isDarkMode }: IProps) => {
 					'absolute top-4 right-4 transition duration-500 p-2 rounded-md',
 					isCopy
 						? 'bg-green-600'
-						: isDarkMode
+						: theme === 'dark'
 						? 'bg-gray-600 hover:bg-gray-500'
 						: 'bg-gray-200 hover:bg-gray-300'
 				)}
@@ -54,7 +55,7 @@ const CodeBlock = ({ children, language, isDarkMode }: IProps) => {
 				{isCopy ? (
 					<Check size={18} color="white" />
 				) : (
-					<Clipboard size={18} color={isDarkMode ? 'white' : 'gray'} />
+					<Clipboard size={18} color={theme === 'dark' ? 'white' : 'gray'} />
 				)}
 			</button>
 		</div>
