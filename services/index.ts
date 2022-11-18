@@ -163,26 +163,30 @@ export const getPostLikes = async (slug: string | string[] | undefined) => {
 export const getPostComments = async (slug: string | string[] | undefined) => {
 	const query = gql`
 		query GetPostComments($slug: String!) {
-			comments(
+			commentsConnection(
 				where: { post: { slug: $slug } }
-				first: 9999999
 				orderBy: createdAt_ASC
+				last: 99999999
 			) {
-				author {
-					id
-					name
-					photo {
-						url
+				edges {
+					node {
+						author {
+							id
+							name
+							photo {
+								url
+							}
+						}
+						comment
+						id
+						createdAt
 					}
 				}
-				comment
-				createdAt
-				id
 			}
 		}
 	`;
 
 	const result = await request(graphqlAPI, query, { slug });
 
-	return result.comments;
+	return result.commentsConnection.edges;
 };
