@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, memo } from 'react';
 import {
 	Bold,
 	Italic,
@@ -29,13 +29,13 @@ const EditorMenuBar = ({ editor }: any) => {
 		editor.chain().focus().extendMarkRange('link').setLink({ href: url }).run();
 	}, [editor]);
 
-	const addImage = () => {
+	const addImage = useCallback(() => {
 		const url = window.prompt('URL');
 
 		if (url) {
 			editor.chain().focus().setImage({ src: url }).run();
 		}
-	};
+	}, [editor]);
 
 	if (!editor) {
 		return null;
@@ -162,4 +162,4 @@ const EditorMenuBar = ({ editor }: any) => {
 	);
 };
 
-export default EditorMenuBar;
+export default memo(EditorMenuBar);

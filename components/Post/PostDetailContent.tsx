@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, memo } from 'react';
 import { Heart } from 'react-feather';
 import { CodeBlock, NoteBlock } from '../utils';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
@@ -61,7 +61,7 @@ const PostDetailContent = ({ source, slug, prevPost, nextPost }: IProps) => {
 		setLikesHandler();
 	}, []);
 
-	const likeBtnHandler = async () => {
+	const likeBtnHandler = useCallback(async () => {
 		if (!userProfile) {
 			toast.error('請登入後再進行按讚動作！', TOAST_STYLE);
 			return;
@@ -85,7 +85,7 @@ const PostDetailContent = ({ source, slug, prevPost, nextPost }: IProps) => {
 
 		setIsLiked(userLiked);
 		setLikes(likes);
-	};
+	}, []);
 
 	return (
 		<div className="w-full lg:w-[650px] px-4 mx-auto pb-32">
@@ -167,4 +167,4 @@ const PostDetailContent = ({ source, slug, prevPost, nextPost }: IProps) => {
 	);
 };
 
-export default PostDetailContent;
+export default memo(PostDetailContent);
