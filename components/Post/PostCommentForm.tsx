@@ -99,11 +99,11 @@ const PostCommentForm = ({
 	};
 
 	return (
-		<div className="w-md lg:w-[650px] px-4 mx-auto mb-4">
+		<div className="w-md lg:w-[650px] px-4 mx-auto mb-16">
 			{/* title */}
 			<div>
 				<h1 className="font-semibold text-2xl">新增留言</h1>
-				<hr className="my-4" />
+				<hr className="my-6" />
 			</div>
 			{!userProfile && (
 				<p className="rounded-lg flex items-center gap-2 p-2 w-full bg-red-100 text-red-600">
