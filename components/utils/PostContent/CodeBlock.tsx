@@ -9,7 +9,7 @@ import { oneDark, coy } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 // toast message
 import { toast } from 'react-toastify';
-import { TOAST_STYLE } from '../../utils';
+import { TOAST_STYLE } from '../../../utils';
 import 'react-toastify/dist/ReactToastify.css';
 
 interface IProps {
