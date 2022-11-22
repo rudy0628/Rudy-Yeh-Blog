@@ -30,16 +30,18 @@
 		line-height: 1.8;
 		@apply text-gray-500 my-8 dark:text-gray-300;
 		list-style-type: decimal;
+		list-style-position: inside;
 	}
 
 	ul {
 		line-height: 1.8;
 		@apply text-gray-500 my-8 dark:text-gray-300;
 		list-style-type: disc;
+		list-style-position: inside;
 	}
 
 	li {
-		@apply ml-[3.5%] mb-2;
+		@apply mb-2;
 	}
 
 	// the code block inside article but not inside the pre tag
