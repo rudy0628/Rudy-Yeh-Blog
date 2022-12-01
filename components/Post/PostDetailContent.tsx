@@ -32,34 +32,24 @@ const PostDetailContent = ({ source, slug, prevPost, nextPost }: IProps) => {
 	const [isLiked, setIsLiked] = useState(false);
 	const { userProfile }: any = useAuthStore();
 
-	// if user Login or Logout in this page
-	useEffect(() => {
-		if (!userProfile) {
-			setIsLiked(false);
-		} else {
-			const userLiked = !!likes.find(
-				(like: any) => like.author.id === userProfile.id
-			);
-			setIsLiked(userLiked);
-		}
-	}, [userProfile]);
-
-	// if user first visit this page
 	useEffect(() => {
 		const setLikesHandler = async () => {
 			const likes = await getPostLikes(slug);
+
 			if (userProfile) {
 				const userLiked = !!likes.find(
 					(like: any) => like.author.id === userProfile.id
 				);
 				setIsLiked(userLiked);
+			} else {
+				setIsLiked(false);
 			}
 
 			setLikes(likes || []);
 		};
 
 		setLikesHandler();
-	}, []);
+	}, [userProfile]);
 
 	const likeBtnHandler = useCallback(async () => {
 		if (!userProfile) {
@@ -77,14 +67,10 @@ const PostDetailContent = ({ source, slug, prevPost, nextPost }: IProps) => {
 			}),
 		});
 
-		const likes = await response.json();
+		const data = await response.json();
 
-		const userLiked = !!likes.find(
-			(like: any) => like.author.id === userProfile.id
-		);
-
-		setIsLiked(userLiked);
-		setLikes(likes);
+		setIsLiked(data.isLiked);
+		setLikes(data.likes);
 	}, []);
 
 	return (

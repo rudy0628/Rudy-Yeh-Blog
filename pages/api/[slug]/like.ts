@@ -15,26 +15,30 @@ export default async function handler(
 		},
 	});
 
-	const { slug } = req.query;
-	const { id } = req.body;
-	const existedLikes = await getPostLikes(slug);
-	const userLiked = existedLikes.find((like: any) => like.author.id === id);
+	if (req.method === 'POST') {
+		const { slug } = req.query;
+		const { id } = req.body;
 
-	if (!userLiked) {
-		// if user not liked
-		const mutation = gql`
-			mutation UpdatePost($id: ID!, $slug: String!) {
-				updatePost(
-					data: {
-						likes: {
-							create: { Like: { data: { author: { connect: { id: $id } } } } }
+		// initial existedLikes
+		const existedLikes = await getPostLikes(slug);
+		const userLiked = existedLikes.find((like: any) => like.author.id === id);
+
+		if (!userLiked) {
+			// if user not liked
+			const mutation = gql`
+				mutation MyMutation($id: ID!, $slug: String!) {
+					updatePost(
+						where: { slug: $slug }
+						data: {
+							likes: {
+								create: {
+									author: { connect: { id: $id } }
+									post: { connect: { slug: $slug } }
+								}
+							}
 						}
-					}
-					where: { slug: $slug }
-				) {
-					likes {
-						... on Like {
-							id
+					) {
+						likes {
 							author {
 								id
 								name
@@ -45,29 +49,35 @@ export default async function handler(
 						}
 					}
 				}
-			}
-		`;
+			`;
 
-		try {
-			const result = await graphqlClient.request(mutation, {
-				id,
-				slug,
-			});
-			return res.status(200).send(result.updatePost.likes);
-		} catch (e: any) {
-			console.log(e);
-		}
-	} else {
-		// if user liked
-		const mutation = gql`
-			mutation UpdatePost($id: ID!, $slug: String!) {
-				updatePost(
-					data: { likes: { delete: { Like: { id: $id } } } }
-					where: { slug: $slug }
-				) {
-					likes {
-						... on Like {
-							id
+			try {
+				const result = await graphqlClient.request(mutation, {
+					id,
+					slug,
+				});
+
+				return res
+					.status(200)
+					.send({ likes: result.updatePost.likes, isLiked: true });
+			} catch (e: any) {
+				console.log(e);
+			}
+		} else {
+			// if user liked
+
+			// Find ready to delete id
+			const deleteId = existedLikes.find(
+				(like: any) => like.author.id === id
+			).id;
+
+			const mutation = gql`
+				mutation MyMutation($id: ID!, $slug: String!) {
+					updatePost(
+						where: { slug: $slug }
+						data: { likes: { delete: { id: $id } } }
+					) {
+						likes {
 							author {
 								id
 								name
@@ -78,17 +88,20 @@ export default async function handler(
 						}
 					}
 				}
-			}
-		`;
+			`;
 
-		try {
-			const result = await graphqlClient.request(mutation, {
-				id: userLiked.id,
-				slug,
-			});
-			return res.status(200).send(result.updatePost.likes);
-		} catch (e: any) {
-			console.log(e);
+			try {
+				const result = await graphqlClient.request(mutation, {
+					id: deleteId,
+					slug,
+				});
+
+				return res
+					.status(200)
+					.send({ likes: result.updatePost.likes, isLiked: false });
+			} catch (e: any) {
+				console.log(e);
+			}
 		}
 	}
 }
