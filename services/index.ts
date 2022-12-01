@@ -138,17 +138,13 @@ export const getAuthor = async (name: string) => {
 export const getPostLikes = async (slug: string | string[] | undefined) => {
 	const query = gql`
 		query GetPostLikes($slug: String!) {
-			post(where: { slug: $slug }) {
-				likes {
-					... on Like {
-						id
-						author {
-							id
-							name
-							photo {
-								url
-							}
-						}
+			likes(where: { post: { slug: $slug } }) {
+				id
+				author {
+					id
+					name
+					photo {
+						url
 					}
 				}
 			}
@@ -157,7 +153,7 @@ export const getPostLikes = async (slug: string | string[] | undefined) => {
 
 	const result = await request(graphqlAPI, query, { slug });
 
-	return result.post.likes;
+	return result.likes;
 };
 
 export const getPostComments = async (slug: string | string[] | undefined) => {
