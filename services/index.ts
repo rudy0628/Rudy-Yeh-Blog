@@ -12,9 +12,7 @@ export const getPosts = async () => {
 						slug
 						title
 						excerpt
-						image {
-							url
-						}
+						image
 						categories {
 							name
 							slug
@@ -42,9 +40,7 @@ export const getRelatedPosts = async (categories: string[], slug: string) => {
 			) {
 				title
 				excerpt
-				image {
-					url
-				}
+				image
 				createdAt
 				slug
 			}
@@ -70,9 +66,7 @@ export const getPostDetails = async (slug: string) => {
 				slug
 				title
 				excerpt
-				image {
-					url
-				}
+				image
 				categories {
 					name
 					slug

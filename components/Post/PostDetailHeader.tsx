@@ -14,7 +14,7 @@ const PostDetailHeader = ({ post }: IProps) => {
 			<Image
 				layout="fill"
 				objectFit="cover"
-				src={post.image.url}
+				src={post.image}
 				className="absolute top-0 w-full h-full object-cover bg-zinc-500"
 				alt={post.slug}
 				loading="eager"

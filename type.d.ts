@@ -6,9 +6,7 @@ export interface IPost {
 		}[];
 		createdAt: string;
 		excerpt: string;
-		image: {
-			url: string;
-		};
+		image: string;
 		slug: string;
 		title: string;
 	};
@@ -28,9 +26,7 @@ export interface IPostDetail {
 	content: string;
 	createdAt: string;
 	excerpt: string;
-	image: {
-		url: string;
-	};
+	image: string;
 	slug: string;
 	title: string;
 	prevPost: {
@@ -61,9 +57,7 @@ interface IComment {
 interface IRelatedPost {
 	title: string;
 	excerpt: string;
-	image: {
-		url: string;
-	};
+	image: string;
 	createdAt: string;
 	slug: string;
 }

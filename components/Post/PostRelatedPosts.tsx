@@ -35,7 +35,7 @@ const PostRelatedPosts = ({ categories, slug }: IProps) => {
 						<Link key={index} href={`/posts/${post.slug}`}>
 							<div className="mb-12 flex flex-col md:flex-row cursor-pointer group">
 								<img
-									src={post.image.url}
+									src={post.image}
 									alt={post.title}
 									className="w-full md:w-48 h-48 object-cover mr-8 rounded-lg group-hover:scale-105 transition-all duration-500"
 								/>
