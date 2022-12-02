@@ -33,4 +33,4 @@ This is my blog (https://blog.rudyyeh.dev/). Built with a bunch of cool technolo
 - [x] Google Analytics
 - [x] Add Categories select
 - [x] Add prev and next post
-- [x] AD
+- [x] Scale the image when image click
