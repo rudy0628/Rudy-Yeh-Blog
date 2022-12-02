@@ -13,8 +13,6 @@ interface IProps {
 const PostCard = ({ imageClassName, post }: IProps) => {
 	const takeOutPost = post.node;
 
-	console.log(takeOutPost.image);
-
 	return (
 		<Link href={`/posts/${takeOutPost.slug}`} scroll>
 			<div className="w-full group transition-all duration-1000">
@@ -25,13 +23,11 @@ const PostCard = ({ imageClassName, post }: IProps) => {
 						'w-full object-cover overflow-hidden lg:group-hover:scale-105 duration-500 rounded-lg cursor-pointer shadow-lg relative'
 					)}
 				>
-					<Image
-						layout="fill"
-						objectFit="cover"
+					<img
+						className="object-cover h-full w-full"
 						src={takeOutPost.image}
 						alt={takeOutPost.title}
 						loading="eager"
-						priority={true}
 					/>
 				</div>
 				{/* title */}
