@@ -11,14 +11,11 @@ const PostDetailHeader = ({ post }: IProps) => {
 	return (
 		<div className="w-full lg:h-[100vh] h-[80vh] overflow-hidden relative flex justify-center">
 			{/* background image */}
-			<Image
-				layout="fill"
-				objectFit="cover"
+			<img
 				src={post.image}
 				className="absolute top-0 w-full h-full object-cover bg-zinc-500"
 				alt={post.slug}
 				loading="eager"
-				priority={true}
 			/>
 			{/* background filter */}
 			<div className="w-full h-full absolute top-0 right-0 bg-black bg-opacity-60" />
