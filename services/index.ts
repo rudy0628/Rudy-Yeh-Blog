@@ -64,9 +64,7 @@ export const getPostDetails = async (slug: string) => {
 					bio
 					name
 					id
-					photo {
-						url
-					}
+					photo
 				}
 				createdAt
 				slug
@@ -123,9 +121,7 @@ export const getAuthor = async (name: string) => {
 			author(where: { name: $name }) {
 				id
 				name
-				photo {
-					url
-				}
+				photo
 			}
 		}
 	`;

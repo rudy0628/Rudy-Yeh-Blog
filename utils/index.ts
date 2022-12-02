@@ -22,21 +22,6 @@ export const createOrGetUser = async (response: any, addUser: any) => {
 		return;
 	}
 
-	// upload the image in assets
-	const imageUploadResponse = await fetch(
-		`${process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT}/upload`,
-		{
-			method: 'POST',
-			headers: {
-				Authorization: `Bearer ${process.env.NEXT_PUBLIC_GRAPHCMS_TOKEN}`,
-				'Content-Type': 'application/x-www-form-urlencoded',
-			},
-			body: `url=${encodeURIComponent(picture)}`,
-		}
-	);
-	const imageUploadData = await imageUploadResponse.json();
-	const assetsImageId = imageUploadData.id;
-
 	// add user
 	const uploadUserResponse = await fetch('/api/user', {
 		method: 'POST',
@@ -45,7 +30,7 @@ export const createOrGetUser = async (response: any, addUser: any) => {
 		},
 		body: JSON.stringify({
 			name,
-			assetsImageId,
+			picture,
 		}),
 	});
 

@@ -10,7 +10,7 @@ export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
-	const { name, assetsImageId } = req.body;
+	const { name, picture } = req.body;
 	const graphqlClient = new GraphQLClient(graphqlAPI, {
 		headers: {
 			authorization: `Bearer ${process.env.NEXT_PUBLIC_GRAPHCMS_TOKEN}`,
@@ -18,23 +18,19 @@ export default async function handler(
 	});
 
 	const mutation = gql`
-		mutation CreateAuthor($name: String!, $imageId: ID!) {
-			createAuthor(
-				data: { name: $name, photo: { connect: { id: $imageId } } }
-			) {
+		mutation CreateAuthor($name: String!, $photo: String!) {
+			createAuthor(data: { name: $name, photo: $photo }) {
 				name
 				id
-				photo {
-					url
-				}
+				photo
 			}
 		}
 	`;
 
 	try {
 		const result = await graphqlClient.request(mutation, {
-			name: name,
-			imageId: assetsImageId,
+			name,
+			photo: picture,
 		});
 
 		return res.status(200).send(result);
