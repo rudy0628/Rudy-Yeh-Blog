@@ -102,7 +102,7 @@ const PostDetailContent = ({ source, slug, prevPost, nextPost }: IProps) => {
 						.map((like: any, index) => (
 							<img
 								key={index}
-								src={like.author.photo.url}
+								src={like.author.photo}
 								alt={like.author.name}
 								className={cx(
 									'h-6 w-6 rounded-full border-[1px] border-gray-200',

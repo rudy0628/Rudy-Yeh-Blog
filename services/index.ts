@@ -139,9 +139,7 @@ export const getPostLikes = async (slug: string | string[] | undefined) => {
 				author {
 					id
 					name
-					photo {
-						url
-					}
+					photo
 				}
 			}
 		}
@@ -163,9 +161,7 @@ export const getPostComments = async (slug: string | string[] | undefined) => {
 				author {
 					id
 					name
-					photo {
-						url
-					}
+					photo
 				}
 				id
 				comment

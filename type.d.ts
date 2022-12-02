@@ -19,9 +19,7 @@ export interface IPostDetail {
 		bio: string;
 		id: string;
 		name: string;
-		photo: {
-			url: string;
-		};
+		photo: string;
 	};
 	categories: {
 		name: string;
@@ -53,9 +51,7 @@ interface IComment {
 	author: {
 		id: string;
 		name: string;
-		photo: {
-			url: string;
-		};
+		photo: string;
 	};
 	id: string;
 	comment: string;

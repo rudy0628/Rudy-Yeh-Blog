@@ -45,7 +45,7 @@ const PostDetailHeader = ({ post }: IProps) => {
 				{/* author and created date */}
 				<div className="flex flex-row align-bottom mt-4">
 					<img
-						src={post.author.photo.url}
+						src={post.author.photo}
 						alt={post.author.name}
 						className="rounded-full h-8 w-8 mr-4"
 					/>

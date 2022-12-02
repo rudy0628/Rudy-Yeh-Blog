@@ -67,7 +67,7 @@ const PostComment = ({ comment, floor, slug, setComments }: IProps) => {
 			<div key={comment.id} className="my-4 flex items-start gap-2">
 				{/* image */}
 				<img
-					src={comment.author?.photo.url || defaultAvatar.src}
+					src={comment.author?.photo || defaultAvatar.src}
 					alt={comment.author?.name || 'default avatar'}
 					className="h-8 w-8 rounded-full bg-white"
 				/>
