@@ -40,7 +40,7 @@ const UserBtn = () => {
 					onClick={logoutHandler}
 				>
 					<img
-						src={userProfile.photo.url}
+						src={userProfile.photo}
 						alt={userProfile.name}
 						className="h-6 w-6 rounded-full"
 					/>

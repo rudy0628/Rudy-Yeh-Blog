@@ -8,7 +8,7 @@ module.exports = withBundleAnalyzer(
 	withTM({
 		reactStrictMode: true,
 		images: {
-			domains: ['media.graphassets.com'],
+			domains: ['media.graphassets.com', 'lh3.googleusercontent.com'],
 		},
 	})
 );

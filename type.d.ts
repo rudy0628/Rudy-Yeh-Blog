@@ -6,9 +6,7 @@ export interface IPost {
 		}[];
 		createdAt: string;
 		excerpt: string;
-		image: {
-			url: string;
-		};
+		image: string;
 		slug: string;
 		title: string;
 	};
@@ -19,9 +17,7 @@ export interface IPostDetail {
 		bio: string;
 		id: string;
 		name: string;
-		photo: {
-			url: string;
-		};
+		photo: string;
 	};
 	categories: {
 		name: string;
@@ -30,9 +26,7 @@ export interface IPostDetail {
 	content: string;
 	createdAt: string;
 	excerpt: string;
-	image: {
-		url: string;
-	};
+	image: string;
 	slug: string;
 	title: string;
 	prevPost: {
@@ -53,9 +47,7 @@ interface IComment {
 	author: {
 		id: string;
 		name: string;
-		photo: {
-			url: string;
-		};
+		photo: string;
 	};
 	id: string;
 	comment: string;
@@ -65,9 +57,7 @@ interface IComment {
 interface IRelatedPost {
 	title: string;
 	excerpt: string;
-	image: {
-		url: string;
-	};
+	image: string;
 	createdAt: string;
 	slug: string;
 }

@@ -26,7 +26,7 @@ const PostCard = ({ imageClassName, post }: IProps) => {
 					<Image
 						layout="fill"
 						objectFit="cover"
-						src={takeOutPost.image.url}
+						src={takeOutPost.image}
 						alt={takeOutPost.title}
 						loading="eager"
 						priority={true}

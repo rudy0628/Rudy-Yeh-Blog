@@ -12,9 +12,7 @@ export const getPosts = async () => {
 						slug
 						title
 						excerpt
-						image {
-							url
-						}
+						image
 						categories {
 							name
 							slug
@@ -42,9 +40,7 @@ export const getRelatedPosts = async (categories: string[], slug: string) => {
 			) {
 				title
 				excerpt
-				image {
-					url
-				}
+				image
 				createdAt
 				slug
 			}
@@ -64,17 +60,13 @@ export const getPostDetails = async (slug: string) => {
 					bio
 					name
 					id
-					photo {
-						url
-					}
+					photo
 				}
 				createdAt
 				slug
 				title
 				excerpt
-				image {
-					url
-				}
+				image
 				categories {
 					name
 					slug
@@ -123,9 +115,7 @@ export const getAuthor = async (name: string) => {
 			author(where: { name: $name }) {
 				id
 				name
-				photo {
-					url
-				}
+				photo
 			}
 		}
 	`;
@@ -143,9 +133,7 @@ export const getPostLikes = async (slug: string | string[] | undefined) => {
 				author {
 					id
 					name
-					photo {
-						url
-					}
+					photo
 				}
 			}
 		}
@@ -167,9 +155,7 @@ export const getPostComments = async (slug: string | string[] | undefined) => {
 				author {
 					id
 					name
-					photo {
-						url
-					}
+					photo
 				}
 				id
 				comment

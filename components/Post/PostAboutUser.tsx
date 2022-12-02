@@ -6,9 +6,7 @@ interface IProps {
 		bio: string;
 		name: string;
 		id: string;
-		photo: {
-			url: string;
-		};
+		photo: string;
 	};
 }
 
@@ -18,7 +16,7 @@ const PostAboutUser = ({ author }: IProps) => {
 			<div className="w-full lg:w-[650px] px-4 mx-auto">
 				<div className="flex items-center mt-12 flex-col md:flex-row">
 					<img
-						src={author.photo.url}
+						src={author.photo}
 						alt={author.name}
 						className="w-24 h-24 rounded-full"
 					/>

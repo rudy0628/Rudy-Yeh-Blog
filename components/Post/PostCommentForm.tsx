@@ -115,7 +115,7 @@ const PostCommentForm = ({
 					{/* user */}
 					<div className="flex gap-4 items-center mb-4">
 						<img
-							src={userProfile.photo.url}
+							src={userProfile.photo}
 							alt={userProfile.name}
 							className="h-8 w-8 rounded-full"
 						/>
