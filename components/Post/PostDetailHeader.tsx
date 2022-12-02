@@ -7,7 +7,6 @@ interface IProps {
 }
 
 const PostDetailHeader = ({ post }: IProps) => {
-	//
 	return (
 		<div className="w-full lg:h-[100vh] h-[80vh] overflow-hidden relative flex justify-center">
 			{/* background image */}
