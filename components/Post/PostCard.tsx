@@ -26,7 +26,6 @@ const PostCard = ({ imageClassName, post }: IProps) => {
 						className="object-cover h-full w-full"
 						src={takeOutPost.image}
 						alt={takeOutPost.title}
-						loading="eager"
 					/>
 				</div>
 				{/* title */}
