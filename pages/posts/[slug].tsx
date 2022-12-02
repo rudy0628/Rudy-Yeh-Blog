@@ -31,6 +31,8 @@ interface IProps {
 const PostDetail = ({ post, source }: IProps) => {
 	const [shouldHideWhiteLogo, setShouldHideWhiteLogo] = useState(false);
 
+	console.log(post);
+
 	useEffect(() => {
 		const handleScroll = () => {
 			if (document.documentElement.scrollTop > 36 * 16) {
