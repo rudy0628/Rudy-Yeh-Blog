@@ -13,6 +13,8 @@ interface IProps {
 const PostCard = ({ imageClassName, post }: IProps) => {
 	const takeOutPost = post.node;
 
+	console.log(takeOutPost.image);
+
 	return (
 		<Link href={`/posts/${takeOutPost.slug}`} scroll>
 			<div className="w-full group transition-all duration-1000">
